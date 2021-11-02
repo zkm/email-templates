@@ -23,8 +23,11 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
-.App-link {
+.App-list {
+  text-align: left;
+}
+.App-link, a {
+  margin-bottom: .5em;
   color: #61dafb;
 }
 
