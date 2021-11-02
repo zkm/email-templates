@@ -22,21 +22,21 @@ class List extends React.Component {
                 title: "Template B",
                 link: "templates/email_b.html"
             },
-            {
-                id: 2.2,
-                title: "Template B2",
-                link: "templates/email_b2.2.html"
-            },
-            {
-                id: 2.3,
-                title: "Template B3",
-                link: "templates/email_b2.3.html"
-            },
-            {
-                id: 2.4,
-                title: "Template B4",
-                link: "templates/email_b2.4.html"
-            },
+            // {
+            //     id: 2.2,
+            //     title: "Template B2",
+            //     link: "templates/email_b2.2.html"
+            // },
+            // {
+            //     id: 2.3,
+            //     title: "Template B3",
+            //     link: "templates/email_b2.3.html"
+            // },
+            // {
+            //     id: 2.4,
+            //     title: "Template B4",
+            //     link: "templates/email_b2.4.html"
+            // },
 
             {
                 id: 3,
