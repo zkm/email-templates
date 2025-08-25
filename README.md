@@ -1,50 +1,74 @@
-# Getting Started with Create React App
+# email-templates
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A small React 19 + Vite 7 app that previews a collection of email templates. The templates live in `src/components/templates` and are imported as raw strings using Vite's `?raw` query inside `TemplateDemo.jsx`.
 
-## Available Scripts
+## Requirements
 
-In the project directory, you can run:
+- Node.js 18+ (recommended 20+)
+- Your choice of package manager (Yarn, npm, pnpm)
 
-### `yarn deploy`
-Deploys the app to [gh-pages](https://pages.github.com/).
-Deployed URL: [https://zkm.github.io/email-templates/](https://zkm.github.io/email-templates/)
+## Quick start
 
-For more information about deployment: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Using Yarn:
 
-### `yarn start`
+```bash
+yarn install
+yarn dev
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Using npm:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```bash
+npm install
+npm run dev
+```
 
-### `yarn test`
+## Build and preview
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Yarn:
 
-### `yarn build` & `yarn predeploy`
+```bash
+yarn build
+yarn preview
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+npm:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+npm run build
+npm run preview
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Where things are
 
-### `yarn eject`
+- `src/components/TemplateDemo.jsx` — the preview UI that loads templates via `?raw` and renders them in a sandboxed iframe
+- `src/components/templates/` — email HTML templates and a shared `default_style.css`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Notes:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- There is no `public/templates` directory; templates are bundled at build time via raw imports.
+- To add a new template, drop an `email_*.html` file into `src/components/templates/` and add an entry/import in `TemplateDemo.jsx`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Deployment
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+This is a standard Vite static build. Any static host works (Netlify, GitHub Pages, etc.).
 
-### `yarn build` fails to minify
+- Ensure the base path matches your hosting path:
+	- For GitHub Pages project sites (e.g., `https://<user>.github.io/<repo>`), the base is `/<repo>/`.
+	- For user/organization sites (e.g., `https://<user>.github.io`), the base is `/`.
+- Build with `yarn build` (or `npm run build`), then deploy the `dist/` folder.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### GitHub Pages via Actions (configured)
+
+This repo includes a workflow at `.github/workflows/deploy-pages.yml` that:
+
+- Installs with Yarn and builds the app
+- Uploads the `dist/` folder as a Pages artifact
+- Deploys to GitHub Pages on pushes to `main`
+
+Notes:
+
+- The workflow passes `--base=/email-templates/` at build time for this repository. If you convert this to a user/org site, change it to `--base=/`.
+- In repo Settings → Pages, select "GitHub Actions" as the source.
+
+If you want, I can run the dev server in this workspace and confirm it starts.
