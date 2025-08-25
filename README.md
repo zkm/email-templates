@@ -1,4 +1,4 @@
-# email-templates
+# HTML Email Templates
 
 A small React 19 + Vite 7 app that previews a collection of email templates. The templates live in `src/components/templates` and are imported as raw strings using Vite's `?raw` query inside `TemplateDemo.jsx`.
 
