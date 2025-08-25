@@ -1,3 +1,8 @@
+# HTML Email Templates
+
+![MIT License](https://img.shields.io/badge/License-MIT-green.svg)
+![Build](https://github.com/zkm/email-templates/actions/workflows/deploy-pages.yml/badge.svg)
+![Node Version](https://img.shields.io/badge/node-%3E=18-blue.svg)
 
 # HTML Email Templates
 
