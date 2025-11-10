@@ -40,6 +40,7 @@ dist/
 .nuxt/
 .vuepress/dist/
 build/Release
+/.vitepress/dist/
 
 ###############################
 # Caches & lockfiles
@@ -53,6 +54,7 @@ build/Release
 .cache/
 .yarn-integrity
 *.tgz
+.vite/
 
 ###############################
 # TypeScript
@@ -93,3 +95,12 @@ Thumbs.db
 *.swp
 *.swo
 .history/
+
+###############################
+# Yarn Berry (v2+)
+###############################
+# Keep releases/plugins/sdks/versions tracked if present
+/.yarn/cache/
+/.yarn/unplugged/
+/.yarn/build-state.yml
+/.yarn/install-state.gz
