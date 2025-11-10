@@ -40,7 +40,7 @@ jobs:
         run: yarn --version
 
       - name: Install dependencies
-        run: yarn install --no-progress --non-interactive
+        run: yarn install --immutable --inline-builds
 
       - name: Build site (set base for project Pages)
         run: yarn build --base=/email-templates/
